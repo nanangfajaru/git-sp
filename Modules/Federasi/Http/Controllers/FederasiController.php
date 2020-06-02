@@ -42,7 +42,7 @@ class FederasiController extends Controller
 
     public function index()
     {
-        return view('federasi::federasiIndexView');
+        return view('federasi::FederasiIndexView');
     }
 
     public function api(){
