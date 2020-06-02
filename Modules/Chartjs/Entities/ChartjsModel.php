@@ -23,53 +23,6 @@ class ChartjsModel extends Model
         return $query ;
     }
 
-    public static function getDataJenisPelatihan()
-    {
-    	$query = DB::table('pelatihan')
-                     ->select(DB::raw('count(*) as count_jenis_pelatihan, id_balai, jenis_pelatihan'))
-                     // ->where('status', '<>', 1)
-                     ->groupBy('id_balai','jenis_pelatihan')
-                     ->get();
-        return $query ;
-    }
-
-    public static function getYkJk()
-    {
-        $query = DB::table('peserta_pelatihan')
-                     ->select(DB::raw('count(*) as count_jk'))
-                     ->where('balai', 'yogyakarta')
-                     ->groupBy('jk')
-                     ->get();
-        return $query ;
-    }
-    public static function getYkKerja()
-    {
-        $query = DB::table('peserta_pelatihan')
-                     ->select(DB::raw('count(*) as count_prov, prov'))
-                     ->where('balai', 'yogyakarta')
-                     ->groupBy('prov')
-                     ->get();
-        return $query ;
-    }
-
-    public static function getBjJk()
-    {
-        $query = DB::table('peserta_pelatihan')
-                     ->select(DB::raw('count(*) as count_jk'))
-                     ->where('balai', 'banjarmasin')
-                     ->groupBy('jk')
-                     ->get();
-        return $query ;
-    }
-    public static function getBjKerja()
-    {
-        $query = DB::table('peserta_pelatihan')
-                     ->select(DB::raw('count(*) as count_prov, prov'))
-                     ->where('balai', 'banjarmasin')
-                     ->groupBy('prov')
-                     ->get();
-        return $query ;
-    }
 }
 
 
