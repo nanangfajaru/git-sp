@@ -9,29 +9,53 @@
             </div>
         @endif
 
-        {{-- <div class="row">
-          <div class="col-md-12">
+        <div class="row">
+					<div class="col-sm-12 col-xl-4">
+						<div class="card card-body bg-blue-400 has-bg-image">
+							<div class="media">
+								<div class="media-body">
+									<h3 class="mb-0">54,390</h3>(e.g)
+									<span class="text-uppercase font-size-xs">Total Serikat Pekerja Tercatat</span>
+								</div>
 
-            <!-- Horizontal form -->
-            <div class="card">
-              <div class="card-header header-elements-inline">
-                <h5 class="card-title">Home</h5>
-                <div class="header-elements">
-                  <div class="list-icons">
-                    <a class="list-icons-item" data-action="collapse"></a>
-                    <a class="list-icons-item" data-action="remove"></a>
-                  </div>
-                </div>
-              </div>
+								<div class="ml-3 align-self-center">
+									<i class="icon-clipboard2 icon-3x opacity-75"></i>
+								</div>
+							</div>
+						</div>
+					</div>
 
-              <div class="card-body">
-              Hello, {{ Auth::user()->name}}</p>
-              </div>
-            </div>
-            <!-- /horizotal form -->
+					<div class="col-sm-12 col-xl-4">
+						<div class="card card-body bg-danger-400 has-bg-image">
+							<div class="media">
+								<div class="media-body">
+									<h3 class="mb-0">389,438</h3>(e.g)
+									<span class="text-uppercase font-size-xs">Total Federasi Tercatat</span>
+								</div>
 
-          </div>
-        </div> --}}
+								<div class="ml-3 align-self-center">
+									<i class="icon-clipboard3 icon-3x opacity-75"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xl-4">
+						<div class="card card-body bg-success-400 has-bg-image">
+							<div class="media">
+								<div class="mr-3 align-self-center">
+									<i class="icon-stack-text icon-3x opacity-75"></i>
+								</div>
+
+								<div class="media-body text-right">
+									<h3 class="mb-0">652,549</h3>(e.g)
+									<span class="text-uppercase font-size-xs">Total Konfederasi Tercatat</span>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+        
 
         <div class="row">
           <div class="col-md-12 col-lg-4">
