@@ -1,0 +1,14 @@
+{
+    "name": "AdKadaluarsa",
+    "alias": "adkadaluarsa",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\AdKadaluarsa\\Providers\\AdKadaluarsaServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

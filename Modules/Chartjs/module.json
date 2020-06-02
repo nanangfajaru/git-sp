@@ -1,0 +1,14 @@
+{
+    "name": "Chartjs",
+    "alias": "chartjs",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Chartjs\\Providers\\ChartjsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

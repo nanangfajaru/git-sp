@@ -1,0 +1,14 @@
+{
+    "name": "SendMail",
+    "alias": "sendmail",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\SendMail\\Providers\\SendMailServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

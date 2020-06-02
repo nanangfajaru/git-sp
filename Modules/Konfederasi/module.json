@@ -1,0 +1,14 @@
+{
+    "name": "Konfederasi",
+    "alias": "konfederasi",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Konfederasi\\Providers\\KonfederasiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
