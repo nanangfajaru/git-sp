@@ -54,14 +54,20 @@
                         <a class="close" data-dismiss="alert">&times;</a>
                         <span> <b>Pendaftaran berhasil</b></span><br>
                         <span> Silahkan login, ganti password dan lengkapi data anda.</span>
+                        <span> Pastikan anda mencatat / mencetak usename dan password.</span>
                     </div>
+                    {{-- <div class="alert bg-danger">
+                        <a class="close" data-dismiss="alert">&times;</a>
+                        <span> Pastikan anda mencatat / mencetak usename dan password.</span>
+                    </div> --}}
 
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
                               <label>Username :</label>
                               <input type="text" class="form-control" placeholder="" name="" autocomplete="off" value="{{ $username }}" readonly="" >
-                          </div>
+                              <span class="text-success"> Pastikan anda mencatat / mencetak usename dan password.</span>
+                            </div>
                           <div class="form-group">
                             <label>Password :</label>
                               <input type="text" class="form-control" placeholder="" name="" autocomplete="off" value="123" readonly="">
@@ -73,7 +79,7 @@
                     <div class="form-group row">
                         <div class="col-lg-10">
                             {{-- <a href="{{ url(Request::segment(1)) }}" class="btn btn-sm bg-grey"><i class="icon-arrow-left13 mr-2"></i>Back</a> --}}
-                            <a href="{{ route('login') }}" class="btn btn-sm bg-grey"><i class="icon-arrow-left13 mr-2"></i>Login</a>
+                            <a href="{{ route('login') }}" target="_blank" class="btn btn-sm bg-grey"><i class="icon-arrow-left13 mr-2"></i>Login</a>
                             <a href="{{ route('daftar.cetak', $username) }}" target="_blank" class="btn btn-sm bg-grey"><i class="icon-printer2 mr-2"></i>Print</a>
                         </div>
                     </div>
