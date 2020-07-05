@@ -37,8 +37,8 @@ class KirimMidleware
             $memberFederasi = HelperSerikatPekerja::memberFederasi($id);
             $total_federasi = $memberFederasi+$totPengurus;
 
-            // $memberKonfederasi = HelperSerikatPekerja::memberKonfederasi($id);
-            // $total_konfederasi = $memberKonfederasi+$totAnggota;
+            $memberKonfederasi = HelperSerikatPekerja::memberKonfederasi($id);
+            $total_konfederasi = $memberKonfederasi+$totPengurus;
             
             // dd($total_federasi);
             $role_id  = Auth::user()->role_id ;
@@ -63,7 +63,7 @@ class KirimMidleware
                         return redirect('federasi');
                     }
                 }elseif ($role_id == 'KD') {
-                    if ($total_federasi <3) {
+                    if ($total_konfederasi <3) {
 
                         Session::flash('alert', 'Data tidak memenuhi syarat. Total Federasi Anggota Kurang Dari 3 !');
                         return redirect('konfederasi');

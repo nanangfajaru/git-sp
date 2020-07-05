@@ -80,9 +80,9 @@ class FederasiController extends Controller
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="'.route('federasi.general', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-pencil5"></i>  Isi Data</a>
 
-                                                <a href="'.route('federasi.member', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-users"></i> Serikat Pekerja</a>
-
                                                 <a href="'.route('federasi.pengurus', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-user-tie"></i>  Pengurus</a>
+                                                
+                                                <a href="'.route('federasi.member', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-users"></i> Serikat Pekerja</a>
 
                                                 <a href="'.route('federasi.detail', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-file-text"></i>  Detail</a>
                                             </div>
@@ -400,7 +400,7 @@ class FederasiController extends Controller
             // 'tgl_pembuatan_ad' => 'required|string|max:255',
             // 'tgl_berlaku_ad' => 'required|string|max:255',
 
-            'perusahaan' => 'required|string|max:255',
+            // 'perusahaan' => 'required|string|max:255',
 
             // 'nama_perusahaan' => 'string|max:255',
             // 'jenis_pekerjaan' => 'string|max:255',
@@ -409,7 +409,7 @@ class FederasiController extends Controller
         ], 
         [
             'required' => 'Harus di isi.',
-            'perusahaan.required' => 'Pilih jenis perusahaan'
+            // 'perusahaan.required' => 'Pilih jenis perusahaan'
             // 'url_ad.mimes' => 'Upload file dengan extention .pdf'
         ]);
 
@@ -443,12 +443,12 @@ class FederasiController extends Controller
                                     'afiliasi_konfederasi' => $request->afiliasi_konfederasi,
                                     'ns_afiliasi_konfederasi' => $request->ns_afiliasi_konfederasi,
 
-                                    'perusahaan' => $request->perusahaan,
+                                    // 'perusahaan' => $request->perusahaan,
 
-                                    'nama_perusahaan' => $request->nama_perusahaan,
-                                    'jumlah_pekerja' => $request->jumlah_pekerja,
-                                    'alamat_perusahaan' => $request->alamat_perusahaan,
-                                    'jenis_pekerjaan' => $request->jenis_pekerjaan,
+                                    // 'nama_perusahaan' => $request->nama_perusahaan,
+                                    // 'jumlah_pekerja' => $request->jumlah_pekerja,
+                                    // 'alamat_perusahaan' => $request->alamat_perusahaan,
+                                    // 'jenis_pekerjaan' => $request->jenis_pekerjaan,
                                     // 'nama_singkat' => $request->nama_singkat,
                                     // 'nama_singkat' => $request->afiliasi,
                                     // 'url_logo' => $path_logo,
@@ -472,7 +472,8 @@ class FederasiController extends Controller
         Session::flash('notif', 'Data Berhasil Disimpan !!');
         // return redirect('serikatpekerja.anggota');
 
-        return redirect()->route('federasi.member', Crypt::encrypt($id_transaction));       
+        // return redirect()->route('federasi.member', Crypt::encrypt($id_transaction));       
+        return redirect()->route('federasi.pengurus', Crypt::encrypt($id_transaction));       
 
         }catch (\Exception $e) {
             DB::rollback();

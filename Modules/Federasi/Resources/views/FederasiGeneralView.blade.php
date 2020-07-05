@@ -19,7 +19,7 @@
 
 <div class="card">
     <div class="card-header header-elements-inline" data-toggle="collapse" href="#accordion-item-default2">
-                 <h6 class="card-title"><i class="icon-users4 mr-2"></i> Informasi Umum Federasi </h6>
+                 <h6 class="card-title"><i class="icon-users4 mr-2"></i> Informasi Umum Federasi</h6>
         <div class="header-elements">
             <div class="list-icons">
                 <a><i class="icon-arrow-down32"></i></a>
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <legend class=" border-bottom-{{ \Config::get('app.theme') }}"><i class="icon-office mr-2"></i>
                             Perusahaan
@@ -251,7 +251,7 @@
                             <span class="text-danger">{{ $errors->first('jenis_pekerjaan') }}</span>
                       </div>
                     </div>
-                  </div>
+                </div> --}}
 
                 <br>
                 <br>
@@ -369,7 +369,8 @@
           url   : "{{ route('getProvinsi.api') }}",
           data  : {
               prov_id : "",
-              idSelected : "{{ $model->id_provinsi }}"   
+            //   idSelected : "{{ $model->id_provinsi }}"   
+              idSelected : ""   
           },
           success: function(data)
           {   
@@ -473,7 +474,7 @@
   </script>
 
   {{-- SELECTED --}}
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
     $(document).ready(function(){
 
       $.ajax({
@@ -557,6 +558,6 @@
       });
 
     });
-  </script>
+  </script> --}}
 
 @endpush

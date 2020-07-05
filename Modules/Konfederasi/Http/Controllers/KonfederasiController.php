@@ -78,9 +78,9 @@ class KonfederasiController extends Controller
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a href="'.route('konfederasi.general', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-pencil5"></i>  Isi Data</a>
 
-                                                <a href="'.route('konfederasi.member', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-users"></i> Federasi</a>
-
                                                 <a href="'.route('konfederasi.pengurus', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-user-tie"></i>  Pengurus</a>
+                                                
+                                                <a href="'.route('konfederasi.member', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-users"></i> Federasi</a>
 
                                                 <a href="'.route('konfederasi.detail', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-file-text"></i>  Detail</a>
                                             </div>
@@ -401,7 +401,7 @@ class KonfederasiController extends Controller
             // 'tgl_pembuatan_ad' => 'required|string|max:255',
             // 'tgl_berlaku_ad' => 'required|string|max:255',
 
-            'perusahaan' => 'required|string|max:255',
+            // 'perusahaan' => 'required|string|max:255',
 
             // 'nama_perusahaan' => 'string|max:255',
             // 'jenis_pekerjaan' => 'string|max:255',
@@ -443,12 +443,12 @@ class KonfederasiController extends Controller
                                     'afiliasi_konfederasi' => $request->afiliasi_konfederasi,
                                     'ns_afiliasi_konfederasi' => $request->ns_afiliasi_konfederasi,
 
-                                    'perusahaan' => $request->perusahaan,
+                                    // 'perusahaan' => $request->perusahaan,
 
-                                    'nama_perusahaan' => $request->nama_perusahaan,
-                                    'jumlah_pekerja' => $request->jumlah_pekerja,
-                                    'alamat_perusahaan' => $request->alamat_perusahaan,
-                                    'jenis_pekerjaan' => $request->jenis_pekerjaan,
+                                    // 'nama_perusahaan' => $request->nama_perusahaan,
+                                    // 'jumlah_pekerja' => $request->jumlah_pekerja,
+                                    // 'alamat_perusahaan' => $request->alamat_perusahaan,
+                                    // 'jenis_pekerjaan' => $request->jenis_pekerjaan,
                                     // 'nama_singkat' => $request->nama_singkat,
                                     // 'nama_singkat' => $request->afiliasi,
                                     // 'url_logo' => $path_logo,

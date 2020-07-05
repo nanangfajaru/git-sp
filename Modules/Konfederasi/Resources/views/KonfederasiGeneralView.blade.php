@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <legend class=" border-bottom-{{ \Config::get('app.theme') }}"><i class="icon-office mr-2"></i>
                             Perusahaan
@@ -218,7 +218,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
                   <div class="row" id="perusahaanDalam">
                     <div class="col-md-4">
                       <div class="form-group {{ $errors->has('nama_perusahaan') ? 'has-error' : '' }}">
@@ -366,7 +366,8 @@
           url   : "{{ route('getProvinsi.api') }}",
           data  : {
               prov_id : "",
-              idSelected : "{{ $model->id_provinsi }}"   
+            //   idSelected : "{{ $model->id_provinsi }}"   
+              idSelected : ""   
           },
           success: function(data)
           {   
@@ -469,7 +470,7 @@
     });
   </script>
     {{-- SELECTED --}}
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
     $(document).ready(function(){
 
       $.ajax({
@@ -553,6 +554,6 @@
       });
 
     });
-  </script>
+  </script> --}}
 
 @endpush

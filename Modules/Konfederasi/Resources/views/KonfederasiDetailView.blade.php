@@ -205,7 +205,7 @@
                             </div>
                         </div>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12">
                     <legend class=" border-bottom-{{ \Config::get('app.theme') }}"><i class="icon-office mr-2"></i>
                         Perusahaan
@@ -253,7 +253,7 @@
                         <span class="text-danger">{{ $errors->first('jenis_pekerjaan') }}</span>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             <br>
             <div class="form-group row">
                 <div class="col-lg-10">

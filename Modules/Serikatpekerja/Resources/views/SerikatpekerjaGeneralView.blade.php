@@ -371,7 +371,8 @@
           url   : "{{ route('getProvinsi.api') }}",
           data  : {
               prov_id : "",
-              idSelected : "{{ $model->id_provinsi }}"   
+            //   idSelected : "{{ $model->id_provinsi }}"   
+              idSelected : ""   
           },
           success: function(data)
           {   
