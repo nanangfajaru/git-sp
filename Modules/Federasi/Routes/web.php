@@ -39,5 +39,6 @@ Route::group(['middleware' => 'check'], function () {
 		Route::post('/'.\App\Helper\UniqRoute::getUniq('destroyMember').'', 'FederasiController@destroyMember')->name('federasi.destroyMember');
 		Route::get('/'.\App\Helper\UniqRoute::getUniq('bukti').'/{seq}', 'FederasiController@bukti')->name('federasi.bukti');
 		Route::get('/'.\App\Helper\UniqRoute::getUniq('suratPenangguhan').'/{seq}', 'FederasiController@suratPenangguhan')->name('federasi.suratPenangguhan');
+		Route::get('/'.\App\Helper\UniqRoute::getUniq('cetakPermohonanPencatatan').'/{seq}', 'FederasiController@cetakPermohonanPencatatan')->name('federasi.cetakPermohonanPencatatan');
 	});
 });

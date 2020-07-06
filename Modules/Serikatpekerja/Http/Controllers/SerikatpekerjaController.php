@@ -137,6 +137,7 @@ class SerikatpekerjaController extends Controller
                                                 <div class="dropdown-menu dropdown-menu-right">
 
                                                     <a href="'.route('serikatpekerja.detail', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-file-text"></i>  Detail</a>
+                                                    <a href="'.route('serikatpekerja.cetakPermohonanPencatatan', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item" target="_blank"><i class="icon-printer"></i>  Print Permohonan Pencatatan</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -195,6 +196,7 @@ class SerikatpekerjaController extends Controller
 
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a href="'.route('serikatpekerja.detail', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-file-text"></i>  Detail</a>
+                                                    <a href="'.route('serikatpekerja.cetakPermohonanPencatatan', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item" target="_blank"><i class="icon-printer"></i>  Print Permohonan Pencatatan</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,6 +252,7 @@ class SerikatpekerjaController extends Controller
 
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a href="'.route('serikatpekerja.detail', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item"><i class="icon-file-text"></i>  Detail</a>
+                                                    <a href="'.route('serikatpekerja.cetakPermohonanPencatatan', Crypt::encrypt($model->serikat_pekerja_id) ).'" class="dropdown-item" target="_blank"><i class="icon-printer"></i>  Print Permohonan Pencatatan</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -487,7 +490,8 @@ class SerikatpekerjaController extends Controller
         Session::flash('notif', 'Data Berhasil Disimpan !!');
         // return redirect('serikatpekerja.anggota');
 
-        return redirect()->route('serikatpekerja.anggota', Crypt::encrypt($id_transaction));       
+        // return redirect()->route('serikatpekerja.anggota', Crypt::encrypt($id_transaction));       
+        return redirect()->route('serikatpekerja.pengurus', Crypt::encrypt($id_transaction));       
 
         }catch (\Exception $e) {
             DB::rollback();
@@ -933,6 +937,16 @@ class SerikatpekerjaController extends Controller
                             ->addIndexColumn()
                             ->make(true);
 
+    }
+
+    public function cetakPermohonanPencatatan($id)
+    {
+        // dd($id);
+        $decrypted = Crypt::decrypt($id);     
+        $model = SerikatpekerjaModel::getDetail()->where('serikat_pekerja_id', $decrypted)->first();
+        $pdf = PDF::loadview('serikatpekerja::SerikatpekerjaCetakPermohonanPencatatan',['model'=>$model, 'url' => $id])->setPaper('a4');
+        // return $pdf->download();   
+        return $pdf->stream();   
     }
 
 }

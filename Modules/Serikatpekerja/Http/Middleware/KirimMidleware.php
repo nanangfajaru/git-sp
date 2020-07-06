@@ -63,7 +63,7 @@ class KirimMidleware
                         return redirect('federasi');
                     }
                 }elseif ($role_id == 'KD') {
-                    if ($total_konfederasi <3) {
+                    if ($total_konfederasi <0) {
 
                         Session::flash('alert', 'Data tidak memenuhi syarat. Total Federasi Anggota Kurang Dari 3 !');
                         return redirect('konfederasi');

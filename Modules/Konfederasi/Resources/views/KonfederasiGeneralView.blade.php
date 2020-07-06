@@ -219,7 +219,7 @@
                     </div>
 
                 </div> --}}
-                  <div class="row" id="perusahaanDalam">
+                  {{-- <div class="row" id="perusahaanDalam">
                     <div class="col-md-4">
                       <div class="form-group {{ $errors->has('nama_perusahaan') ? 'has-error' : '' }}">
                           <label>Nama Perusahaan :</label>
@@ -250,7 +250,7 @@
                             <span class="text-danger">{{ $errors->first('jenis_pekerjaan') }}</span>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
 
                 <br>
                 <br>

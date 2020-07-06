@@ -39,7 +39,7 @@ Route::group(['middleware' => 'check'], function () {
 		Route::post('/'.\App\Helper\UniqRoute::getUniq('destroyMember').'', 'KonfederasiController@destroyMember')->name('konfederasi.destroyMember');
 		Route::get('/'.\App\Helper\UniqRoute::getUniq('bukti').'/{seq}', 'KonfederasiController@bukti')->name('konfederasi.bukti');
 		Route::get('/'.\App\Helper\UniqRoute::getUniq('suratPenangguhan').'/{seq}', 'KonfederasiController@suratPenangguhan')->name('konfederasi.suratPenangguhan');
-
+		Route::get('/'.\App\Helper\UniqRoute::getUniq('cetakPermohonanPencatatan').'/{seq}', 'KonfederasiController@cetakPermohonanPencatatan')->name('konfederasi.cetakPermohonanPencatatan');
 	});
 
 });

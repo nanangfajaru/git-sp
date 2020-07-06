@@ -51,18 +51,21 @@ Route::group(['middleware' => 'check'], function () {
 	    Route::get('/'.\App\Helper\UniqRoute::getUniq('suratPenangguhan').'/{seq}', 'SerikatpekerjaController@suratPenangguhan')->name('serikatpekerja.suratPenangguhan');
 	    Route::get('/'.\App\Helper\UniqRoute::getUniq('riwayatAdART').'/{seq}', 'SerikatpekerjaController@riwayatAdART')->name('serikatpekerja.riwayatAdART');
 	    Route::post('/'.\App\Helper\UniqRoute::getUniq('apiRiwayatAdART').'', 'SerikatpekerjaController@apiRiwayatAdART')->name('serikatpekerja.apiRiwayatAdART');
+	    Route::get('/'.\App\Helper\UniqRoute::getUniq('cetakPermohonanPencatatan').'/{seq}', 'SerikatpekerjaController@cetakPermohonanPencatatan')->name('serikatpekerja.cetakPermohonanPencatatan');
 	});
-
+	
 });
 // Route::post('/api', 'SerikatpekerjaController@api')->name('serikatpekerja.api');
 Route::prefix('serikatpekerja')->group(function() {
-    Route::post('/api/get-provinsi', 'SerikatpekerjaController@getProvinsi')->name('getProvinsi.api');
+	Route::post('/api/get-provinsi', 'SerikatpekerjaController@getProvinsi')->name('getProvinsi.api');
     Route::post('/api/get-kabupaten', 'SerikatpekerjaController@getKabupaten')->name('getKabupaten.api');
     Route::post('/api/get-kecamatan', 'SerikatpekerjaController@getKecamatan')->name('getKecamatan.api');
     Route::post('/api/get-desa', 'SerikatpekerjaController@getDesa')->name('getDesa.api');
-
+	
 });
 
 Route::get('qrcode', function () {
-     return QrCode::size(300)->generate('A basic example of QR code!');
- });
+	return QrCode::size(300)->generate('A basic example of QR code!');
+});
+
+Route::get('/validate/{seq}', 'SerikatpekerjaController@cetakPermohonanPencatatan')->name('serikatpekerja.validate');

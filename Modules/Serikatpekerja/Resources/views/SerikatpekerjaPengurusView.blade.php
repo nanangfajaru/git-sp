@@ -104,7 +104,8 @@
 
                     </div>
                     <div class="col-md-2">
-                        <a href="{{ route('serikatpekerja') }}" type="button" class="btn bg-{{ \Config::get('app.theme')}} pull-right" id="btnNext">Selesai <i class=" icon-checkmark4 ml-2"></i></a>
+                        {{-- <a href="{{ route('serikatpekerja') }}" type="button" class="btn bg-{{ \Config::get('app.theme')}} pull-right" id="btnNext">Selesai <i class=" icon-checkmark4 ml-2"></i></a> --}}
+                        <a href="{{ route('serikatpekerja.anggota', Crypt::encrypt($model->serikat_pekerja_id)) }}" type="button" class="btn bg-{{ \Config::get('app.theme')}} pull-right" id="btnNext">Anggota <i class=" icon-checkmark4 ml-2"></i></a>
                     </div>
                 </div>
 
